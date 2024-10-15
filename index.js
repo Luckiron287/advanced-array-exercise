@@ -49,6 +49,7 @@ const instructors = [
       availability: "evenings",
       specialities: ["Python", "C++"],
     },
+
     {
       name: "Charles",
       availability: "none",
@@ -56,6 +57,7 @@ const instructors = [
     },
   ];
   
+  //Nouveau tableau avec instructeurs disponibles les weekends + avec stack JS 
   const jsWeInstructors = instructors.filter((instructor) => {
     return (
       (instructor.availability === "all" ||
@@ -63,5 +65,18 @@ const instructors = [
       instructor.specialities.some((speciality) => speciality === "Javascript")
     );
   });
-  
-  console.log(jsWeInstructors);
+
+  //Parcours du nouveau tableau pour faire dire une phrase à chacun de ces instrcuteurs
+  //jsWeInstructors.forEach(instructor => console.log(`Hi ${instructor.name}, we inform you that this weekend you will be doing the support class`));
+
+//Modification du message précédent 
+instructors.forEach(instructor => {
+    if(instructor.availability === "all" || instructor.availability === "weekend") {
+        if(instructor.specialities.some(speciality => speciality === "Python")) {
+            console.log(`Hi ${instructor.name}, we inform you that this weekend you will be doing the support class and you need to prepare a Python workshop.`)
+        }
+        else if(instructor.specialities.some(speciality => speciality === "Javascript")) {
+            console.log(`Hi ${instructor.name}, we inform you that this weekend you will be doing the support class.`)
+        }
+    }
+})
