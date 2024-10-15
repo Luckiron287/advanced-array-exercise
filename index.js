@@ -67,7 +67,7 @@ const instructors = [
   });
 
   //Parcours du nouveau tableau pour faire dire une phrase à chacun de ces instrcuteurs
-  //jsWeInstructors.forEach(instructor => console.log(`Hi ${instructor.name}, we inform you that this weekend you will be doing the support class`));
+  jsWeInstructors.forEach(instructor => console.log(`Hi ${instructor.name}, we inform you that this weekend you will be doing the support class`));
 
 //Modification du message précédent 
 instructors.forEach(instructor => {
